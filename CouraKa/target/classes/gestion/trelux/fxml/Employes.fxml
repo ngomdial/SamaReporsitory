@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.ImageInput?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="1047.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion.trelux.controller.EmployeControler">
+   <children>
+      <Pane prefHeight="90.0" prefWidth="1047.0">
+         <children>
+            <ImageView fitHeight="101.0" fitWidth="465.0" layoutX="295.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-x: 2.3;">
+               <image>
+                  <Image url="@../image/Banniere1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TabPane layoutY="126.0" prefHeight="568.0" prefWidth="1045.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="AJOUT LIVREUR">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="489.0" prefWidth="1021.0">
+                     <children>
+                        <AnchorPane fx:id="boutiquelivreur" prefHeight="615.0" prefWidth="1021.0">
+                           <children>
+                              <JFXTextField fx:id="cin" labelFloat="true" layoutX="43.0" layoutY="26.0" promptText="CIN">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="prenom" labelFloat="true" layoutX="43.0" layoutY="74.0" prefHeight="25.0" prefWidth="169.0" promptText="PRENOM" />
+                              <JFXTextField fx:id="nom" labelFloat="true" layoutX="43.0" layoutY="116.0" prefHeight="25.0" prefWidth="170.0" promptText="NOM" />
+                              <JFXTextField fx:id="lieunais" labelFloat="true" layoutX="337.0" layoutY="74.0" prefHeight="25.0" prefWidth="190.0" promptText="LIEU NAISSANCE" />
+                              <JFXTextField fx:id="nat" labelFloat="true" layoutX="339.0" layoutY="31.0" prefHeight="25.0" prefWidth="193.0" promptText="NATIONALITE" />
+                              <JFXTextField fx:id="tel" labelFloat="true" layoutX="340.0" layoutY="116.0" prefHeight="25.0" prefWidth="185.0" promptText="TELEPHONE" />
+                              <JFXTextField fx:id="adresse" labelFloat="true" layoutX="42.0" layoutY="159.0" prefHeight="25.0" prefWidth="172.0" promptText="ADRESSE" />
+                              <JFXTextField fx:id="email" labelFloat="true" layoutX="342.0" layoutY="159.0" prefHeight="25.0" prefWidth="181.0" promptText="EMAIL" />
+                              <Label layoutX="292.0" layoutY="253.0" text="SEXE" />
+                              <JFXRadioButton fx:id="femme" layoutX="347.0" layoutY="253.0" text="femme">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="sexe" />
+                                 </toggleGroup>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="homme" layoutX="449.0" layoutY="253.0" text="homme" toggleGroup="$sexe" />
+                              <Label layoutX="597.0" layoutY="86.0" text="PHOTO" />
+                              <ImageView fx:id="image" fitHeight="164.0" fitWidth="214.0" layoutX="647.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                              <JFXTextField fx:id="login" layoutX="39.0" layoutY="385.0" text="   LOGIN" />
+                              <JFXTextField fx:id="pwd" layoutX="242.0" layoutY="373.0" prefHeight="37.0" prefWidth="135.0" text="   PASSWORD" />
+                              <JFXButton fx:id="charger" layoutX="826.0" layoutY="171.0" onAction="#charger" text="CHARGER" />
+                              <TextField fx:id="chemin" layoutX="597.0" layoutY="171.0" prefHeight="25.0" prefWidth="223.0" />
+                              <Label layoutY="335.0" prefHeight="17.0" prefWidth="1021.0" style="-fx-background-color: Black;" text="                                                                                         CONNEXION" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="confirmpwd" layoutX="453.0" layoutY="385.0" text=" COFIRMER  PASSWORD" />
+                              <JFXButton fx:id="valider" layoutX="431.0" layoutY="455.0" onAction="#valider" prefHeight="40.0" prefWidth="98.0" style="-fx-background-color: #307c4a;" text="VALIDER" textFill="#fafbfa">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <DatePicker fx:id="datenaiss" layoutX="39.0" layoutY="249.0" prefHeight="25.0" prefWidth="177.0" />
+                              <JFXTextField fx:id="typeliv" labelFloat="true" layoutX="42.0" layoutY="196.0" prefHeight="25.0" prefWidth="172.0" promptText="TYPE" />
+                              <JFXTextField fx:id="codeliv" labelFloat="true" layoutX="345.0" layoutY="202.0" prefHeight="25.0" prefWidth="172.0" promptText="CODE LIVREUR" />
+                              <JFXComboBox fx:id="combo" layoutX="619.0" layoutY="249.0" prefHeight="25.0" prefWidth="178.0" promptText="          BOUTIQUE" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="LIVREUR">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="535.0" prefWidth="1021.0">
+                     <children>
+                        <TableView fx:id="tableliste" prefHeight="282.0" prefWidth="1047.0">
+                          <columns>
+                            <TableColumn fx:id="colcin" prefWidth="116.0" text="CIN" />
+                            <TableColumn fx:id="colnom" prefWidth="109.0" text="NOM" />
+                              <TableColumn minWidth="0.0" prefWidth="0.0" text="PRENOM" />
+                              <TableColumn fx:id="colprenom" prefWidth="150.0" text="PRENOM" />
+                              <TableColumn minWidth="0.0" prefWidth="0.0" text="TELEPHONE" />
+                              <TableColumn fx:id="colemail" prefWidth="151.0" text="EMAIL" />
+                              <TableColumn fx:id="coltel" prefWidth="151.0" text="TELEPHONE" />
+                              <TableColumn fx:id="coladresse" prefWidth="151.0" text="ADRESSE" />
+                              <TableColumn fx:id="colsexe" prefWidth="151.0" text="SEXE" />
+                          </columns>
+                        </TableView>
+                        <JFXButton fx:id="refrech" layoutX="910.0" layoutY="498.0" onAction="#rafraichir" style="-fx-background-color: #307c4a;;" text="RAFRAICHIR" textFill="#f2f8fa" />
+                        <Label layoutX="-3.0" layoutY="282.0" prefHeight="27.0" prefWidth="1047.0" style="-fx-background-color: BLACK;" text="                                                                                        DETAILS LIVREUR" textFill="#fffdfd">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="24.0" layoutY="339.0" prefHeight="132.0" prefWidth="813.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="317.0" minWidth="0.0" prefWidth="261.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="370.0" minWidth="0.0" prefWidth="167.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="390.0" minWidth="0.0" prefWidth="265.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="CIN" />
+                              <Label layoutX="10.0" layoutY="17.0" text="NOM" GridPane.rowIndex="1" />
+                              <Label layoutX="10.0" layoutY="48.0" text="PRENOM" GridPane.rowIndex="2" />
+                              <Label layoutX="10.0" layoutY="84.0" text="ADRESSE" GridPane.rowIndex="3" />
+                              <TextField prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="1" />
+                              <TextField layoutX="105.0" layoutY="14.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField layoutX="105.0" layoutY="47.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField layoutX="105.0" layoutY="80.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label layoutX="10.0" layoutY="18.0" prefHeight="17.0" prefWidth="76.0" text="TELEPHONE" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label layoutX="302.0" layoutY="18.0" prefHeight="17.0" prefWidth="41.0" text="EMAIL" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label layoutX="302.0" layoutY="51.0" prefHeight="17.0" prefWidth="82.0" text="NATIONALITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label layoutX="302.0" layoutY="84.0" prefHeight="17.0" prefWidth="107.0" text="DATE NAISSANCE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField layoutX="104.0" layoutY="14.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="3" />
+                              <TextField layoutX="432.0" layoutY="14.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextField layoutX="432.0" layoutY="47.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <DatePicker prefHeight="25.0" prefWidth="269.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <JFXButton fx:id="refrech1" layoutX="809.0" layoutY="498.0" onAction="#rafraichir" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #055e9a;" text="MODIFIER" textFill="#f7fafc">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="AJOUT CAISSIER">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane prefHeight="615.0" prefWidth="1021.0">
+                           <children>
+                              <JFXTextField fx:id="cin1" labelFloat="true" layoutX="43.0" layoutY="26.0" promptText="CIN">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="prenom1" labelFloat="true" layoutX="43.0" layoutY="74.0" prefHeight="25.0" prefWidth="169.0" promptText="PRENOM" />
+                              <JFXTextField fx:id="nom1" labelFloat="true" layoutX="43.0" layoutY="116.0" prefHeight="25.0" prefWidth="170.0" promptText="NOM" />
+                              <JFXTextField fx:id="lieunais1" labelFloat="true" layoutX="337.0" layoutY="74.0" prefHeight="25.0" prefWidth="190.0" promptText="LIEU NAISSANCE" />
+                              <JFXTextField fx:id="nat1" labelFloat="true" layoutX="339.0" layoutY="31.0" prefHeight="25.0" prefWidth="193.0" promptText="NATIONALITE" />
+                              <JFXTextField fx:id="tel1" labelFloat="true" layoutX="340.0" layoutY="116.0" prefHeight="25.0" prefWidth="185.0" promptText="TELEPHONE" />
+                              <JFXTextField fx:id="adresse1" labelFloat="true" layoutX="42.0" layoutY="159.0" prefHeight="25.0" prefWidth="172.0" promptText="ADRESSE" />
+                              <JFXTextField fx:id="email1" labelFloat="true" layoutX="342.0" layoutY="159.0" prefHeight="25.0" prefWidth="181.0" promptText="EMAIL" />
+                              <Label layoutX="292.0" layoutY="253.0" text="SEXE" />
+                              <JFXRadioButton fx:id="femme1" layoutX="347.0" layoutY="253.0" text="femme">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="sexe1" />
+                                 </toggleGroup>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="homme1" layoutX="449.0" layoutY="253.0" text="homme" toggleGroup="$sexe1" />
+                              <Label layoutX="597.0" layoutY="86.0" text="PHOTO" />
+                              <ImageView fx:id="image1" fitHeight="164.0" fitWidth="214.0" layoutX="647.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                              <JFXTextField fx:id="login1" layoutX="39.0" layoutY="385.0" text="   LOGIN" />
+                              <JFXTextField fx:id="pwd1" layoutX="242.0" layoutY="373.0" prefHeight="37.0" prefWidth="135.0" text="   PASSWORD" />
+                              <JFXButton fx:id="charger1" layoutX="826.0" layoutY="171.0" onAction="#charger" text="CHARGER" />
+                              <TextField fx:id="chemin1" layoutX="597.0" layoutY="171.0" prefHeight="25.0" prefWidth="223.0" />
+                              <Label layoutY="335.0" prefHeight="17.0" prefWidth="1021.0" style="-fx-background-color: Black;" text="                                                                                         CONNEXION" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="confirmpwd1" layoutX="453.0" layoutY="385.0" text=" COFIRMER  PASSWORD" />
+                              <JFXButton fx:id="valider1" layoutX="431.0" layoutY="455.0" onAction="#validerC" prefHeight="40.0" prefWidth="98.0" style="-fx-background-color: #307c4a;" text="VALIDER" textFill="#fafbfa">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <DatePicker fx:id="datenaiss1" layoutX="39.0" layoutY="249.0" prefHeight="25.0" prefWidth="177.0" />
+                              <JFXTextField fx:id="typecais" labelFloat="true" layoutX="42.0" layoutY="196.0" prefHeight="25.0" prefWidth="172.0" promptText="TYPE" />
+                              <JFXTextField fx:id="codecais" labelFloat="true" layoutX="345.0" layoutY="202.0" prefHeight="25.0" prefWidth="172.0" promptText="CODE CAISSSIER" />
+                              <JFXComboBox fx:id="combo1" layoutX="642.0" layoutY="247.0" prefHeight="25.0" prefWidth="178.0" promptText="          BOUTIQUE" />
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="CAISSIER">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="535.0" prefWidth="1021.0">
+                     <children>
+                        <TableView fx:id="tableliste1" prefHeight="282.0" prefWidth="1047.0">
+                           <columns>
+                              <TableColumn fx:id="colcin1" prefWidth="116.0" text="CIN" />
+                              <TableColumn fx:id="colnom1" prefWidth="109.0" text="NOM" />
+                              <TableColumn minWidth="0.0" prefWidth="0.0" text="PRENOM" />
+                              <TableColumn fx:id="colprenom1" prefWidth="150.0" text="PRENOM" />
+                              <TableColumn minWidth="0.0" prefWidth="0.0" text="TELEPHONE" />
+                              <TableColumn fx:id="colemail1" prefWidth="151.0" text="EMAIL" />
+                              <TableColumn fx:id="coltel1" prefWidth="151.0" text="TELEPHONE" />
+                              <TableColumn fx:id="coladresse1" prefWidth="151.0" text="ADRESSE" />
+                              <TableColumn fx:id="colsexe1" prefWidth="151.0" text="SEXE" />
+                           </columns>
+                        </TableView>
+                        <JFXButton fx:id="refrech2" layoutX="910.0" layoutY="498.0" onAction="#rafraichirC" style="-fx-background-color: #307c4a;;" text="RAFRAICHIR" textFill="#f2f8fa" />
+                        <Label layoutX="-3.0" layoutY="282.0" prefHeight="27.0" prefWidth="1047.0" style="-fx-background-color: BLACK;" text="                                                                                        DETAILS LIVREUR" textFill="#fffdfd">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="24.0" layoutY="339.0" prefHeight="132.0" prefWidth="813.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="317.0" minWidth="0.0" prefWidth="261.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="370.0" minWidth="0.0" prefWidth="167.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="390.0" minWidth="0.0" prefWidth="265.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="CIN" />
+                              <Label layoutX="10.0" layoutY="17.0" text="NOM" GridPane.rowIndex="1" />
+                              <Label layoutX="10.0" layoutY="48.0" text="PRENOM" GridPane.rowIndex="2" />
+                              <Label layoutX="10.0" layoutY="84.0" text="ADRESSE" GridPane.rowIndex="3" />
+                              <TextField prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="1" />
+                              <TextField layoutX="105.0" layoutY="14.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField layoutX="105.0" layoutY="47.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField layoutX="105.0" layoutY="80.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label layoutX="10.0" layoutY="18.0" prefHeight="17.0" prefWidth="76.0" text="TELEPHONE" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label layoutX="302.0" layoutY="18.0" prefHeight="17.0" prefWidth="41.0" text="EMAIL" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label layoutX="302.0" layoutY="51.0" prefHeight="17.0" prefWidth="82.0" text="NATIONALITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label layoutX="302.0" layoutY="84.0" prefHeight="17.0" prefWidth="107.0" text="DATE NAISSANCE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField layoutX="104.0" layoutY="14.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="3" />
+                              <TextField layoutX="432.0" layoutY="14.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextField layoutX="432.0" layoutY="47.0" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <DatePicker prefHeight="25.0" prefWidth="269.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <JFXButton fx:id="refrech2" layoutX="809.0" layoutY="498.0" onAction="#modifierC" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #055e9a;" text="MODIFIER" textFill="#f7fafc">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0e0e1" height="24.0" layoutY="102.0" stroke="BLACK" strokeType="INSIDE" width="1047.0" />
+      <TextField fx:id="recherch" layoutX="524.0" layoutY="102.0" prefHeight="25.0" prefWidth="279.0" promptText="reherche par nom" />
+      <Button fx:id="validRech" layoutX="804.0" layoutY="102.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #2263b8;" text="Button" textFill="#2263b8">
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="file:/C:/Users/Fatima/Documents/NetBeansProjects/treluxServeur/src/main/resources/gestion/trelux/image/icon-24-search.png" />
+               </source>
+            </ImageInput>
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Devis" table="devis" schema="public" optimistic-lock="version">
+        <id name="codedevis" type="string">
+            <column name="codedevis" length="254" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="commandestock" class="gestion.trelux.metier.Commandestock" fetch="select">
+            <column name="codestock" length="254" />
+        </many-to-one>
+        <property name="datedevis" type="string">
+            <column name="datedevis" length="254" />
+        </property>
+        <property name="montantdevis" type="java.lang.Integer">
+            <column name="montantdevis" />
+        </property>
+        <set name="lignedevises" table="lignedevis" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codedevis" length="254" not-null="true" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Lignedevis" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+ <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+     <aop:aspectj-autoproxy/>
+       
+     <bean name="personne" class="gestion.trelux.metier.Personne"></bean> <!--Bean Personne--> 
+     <bean name="persH" class="gestion.trelux.DAO.PersonneHomeImpl"></bean> <!--Bean PersonneHome--> 
+     <bean name="clientH" class="gestion.trelux.DAO.ClientHomeImpl"></bean> <!--Bean ClientHome--> 
+     <bean name="client" class="gestion.trelux.metier.Client"></bean> <!--Bean Client--> 
+     <bean name="livreur" class="gestion.trelux.metier.Livreur"></bean>
+     <bean name="livreurH" class="gestion.trelux.DAO.LivreurHomeImpl"></bean>
+     <bean name="employe" class="gestion.trelux.metier.Employe"></bean>
+     <bean name="caissier" class="gestion.trelux.metier.Caissier"></bean>
+     <bean name="caissierH" class="gestion.trelux.DAO.CaissierHomeImpl"></bean>
+     <bean name="gerant" class="gestion.trelux.metier.Gerant"></bean>
+     <bean name="gerantH" class="gestion.trelux.DAO.GerantHomeImpl"></bean>
+     <bean name="employeid" class="gestion.trelux.metier.EmployeId"></bean>
+     <bean name="clientid" class="gestion.trelux.metier.ClientId"></bean>
+      <bean name="four" class="gestion.trelux.metier.Fournisseur"></bean> 
+         <bean name="fourId" class="gestion.trelux.metier.FournisseurId"></bean> 
+          <bean name="fourH" class="gestion.trelux.DAO.FournisseurHomeImpl"></bean> 
+       <bean name="prod" class="gestion.trelux.metier.Produit"></bean>
+     <bean name="prodid" class="gestion.trelux.metier.ProduitId"></bean>
+     <bean name="condition" class="gestion.trelux.metier.Conditionnement"></bean>
+       <bean name="famille" class="gestion.trelux.metier.Familleboisson"></bean>
+     <bean name="ligneCom" class="gestion.trelux.metier.Lignecommandestock"></bean>
+     <bean name="ligneComId" class="gestion.trelux.metier.LignecommandestockId"></bean>
+     <bean name="prodH" class="gestion.trelux.DAO.ProduitHomeImpl"></bean>
+     <bean name="ligneComH" class="gestion.trelux.DAO.LignecommandestockHomeImpl"></bean>
+      <bean name="conditionH" class="gestion.trelux.DAO.ConditionnementHomeImpl"></bean>
+     <bean name="familleH" class="gestion.trelux.DAO.FamilleboissonHomeImpl"></bean>
+      <bean name="panierH" class="gestion.trelux.DAO.PanierHomeImpl"></bean>
+     <bean name="panier" class="gestion.trelux.metier.Panier"></bean>
+      <bean name="lignepanierId" class="gestion.trelux.metier.LignecommandepanierId"></bean>
+       <bean name="lignepanier" class="gestion.trelux.metier.Lignecommandepanier"></bean>
+       <bean name="cmdclient" class="gestion.trelux.metier.Commandeclient"></bean>
+       <bean name="cmdstock" class="gestion.trelux.metier.Commandestock"></bean>
+     <bean name="lignepanierH" class="gestion.trelux.DAO.LignecommandepanierHomeImpl"></bean>
+      <bean name="livraison" class="gestion.trelux.metier.Livraison"></bean>
+      <bean name="cmdclientH" class="gestion.trelux.DAO.CommandeclientHomeImpl"></bean>
+       <bean name="cmdstockH" class="gestion.trelux.DAO.CommandestockHomeImpl"></bean>
+ </beans>
+ 

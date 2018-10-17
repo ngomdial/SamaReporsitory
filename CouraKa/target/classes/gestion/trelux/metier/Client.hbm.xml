@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Client" table="client" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="gestion.trelux.metier.ClientId">
+            <key-property name="idpersonne" type="string">
+                <column name="idpersonne" length="254" />
+            </key-property>
+            <key-property name="codeclient" type="string">
+                <column name="codeclient" length="254" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="personne" class="gestion.trelux.metier.Personne" update="false" insert="false" fetch="select">
+            <column name="idpersonne" length="254" not-null="true" />
+        </many-to-one>
+        <property name="categorie" type="string">
+            <column name="categorie" length="254" />
+        </property>
+        <property name="vip" type="string">
+            <column name="vip" length="254" />
+        </property>
+        <property name="label" type="java.lang.Integer">
+            <column name="label" />
+        </property>
+        <set name="paniers" table="panier" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersonne" length="254" />
+                <column name="codeclient" length="254" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Panier" />
+        </set>
+    </class>
+</hibernate-mapping>

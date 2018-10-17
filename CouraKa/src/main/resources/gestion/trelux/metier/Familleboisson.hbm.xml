@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Familleboisson" table="familleboisson" schema="public" optimistic-lock="version">
+        <id name="codefamille" type="string">
+            <column name="codefamille" length="254" />
+            <generator class="assigned" />
+        </id>
+        <property name="gazeuse" type="string">
+            <column name="gazeuse" length="254" />
+        </property>
+        <property name="sucre" type="string">
+            <column name="sucre" length="254" />
+        </property>
+        <property name="alcool" type="string">
+            <column name="alcool" length="254" />
+        </property>
+        <set name="produits" table="produit" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codefamille" length="254" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Produit" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion.trelux.controller.EntreeStockController">
+   <children>
+      <TabPane layoutX="-4.0" layoutY="111.0" prefHeight="516.0" prefWidth="1177.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Entree Nouveau Produit">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="1177.0">
+                     <children>
+                        <BorderPane fx:id="border" prefHeight="485.0" prefWidth="1166.0">
+                           <left>
+                              <Pane prefHeight="466.0" prefWidth="321.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="53.0" layoutX="3.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="315.0" />
+                                    <Text layoutX="85.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTE DES COMMANDES NON RECUES" />
+                                    <JFXButton fx:id="actualiserCom" layoutX="121.0" layoutY="435.0" onAction="#actualiserCom" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: GREEN;" text="ACTUALISER" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <TableView fx:id="tabCom" layoutX="4.0" layoutY="54.0" prefHeight="372.0" prefWidth="315.0">
+                                      <columns>
+                                        <TableColumn fx:id="numCom" prefWidth="315.0" text="NUMERO DES COMMANDES" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </Pane>
+                           </left>
+                           <right>
+                              <Pane fx:id="paneview" prefHeight="436.0" prefWidth="845.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="53.0" layoutX="5.0" stroke="BLACK" strokeType="INSIDE" width="840.0" />
+                                    <Text layoutX="85.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DETAILS COMMANDES" />
+                                    <ListView fx:id="listViewLigneCom" layoutX="5.0" layoutY="59.0" prefHeight="374.0" prefWidth="838.0" />
+                                 </children>
+                              </Pane>
+                           </right>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Stock Actuel">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="870.0">
+                     <children>
+                        <Pane layoutX="6.0" layoutY="3.0" prefHeight="397.0" prefWidth="1168.0">
+                           <children>
+                              <TableView prefHeight="200.0" prefWidth="865.0">
+                                <columns>
+                                    <TableColumn prefWidth="163.0" text="FAMILLE PRODUIT" />
+                                    <TableColumn prefWidth="163.0" text="CONDITIONNEMENT" />
+                                    <TableColumn prefWidth="197.0" text="PRODUIT" />
+                                    <TableColumn prefWidth="222.0" text="QUANTITE" />
+                                </columns>
+                              </TableView>
+                              <JFXButton layoutX="407.0" layoutY="251.0" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: BLUE;" text="ACTUALISER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Entree Produit Existant">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="1177.0">
+                     <children>
+                        <BorderPane fx:id="borderProd" prefHeight="485.0" prefWidth="1166.0">
+                           <left>
+                              <Pane prefHeight="466.0" prefWidth="321.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="53.0" layoutX="3.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="315.0" />
+                                    <Text layoutX="85.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTE DES COMMANDES NON RECUES" />
+                                    <JFXButton fx:id="actualiserComProd" layoutX="121.0" layoutY="435.0" onAction="#actualiserCom" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: GREEN;" text="ACTUALISER" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <TableView fx:id="tabComProd" layoutX="4.0" layoutY="54.0" prefHeight="372.0" prefWidth="315.0">
+                                       <columns>
+                                          <TableColumn fx:id="numComProd" prefWidth="315.0" text="NUMERO DES COMMANDES" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </Pane>
+                           </left>
+                           <right>
+                              <Pane fx:id="paneview1" prefHeight="436.0" prefWidth="845.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="53.0" layoutX="5.0" stroke="BLACK" strokeType="INSIDE" width="840.0" />
+                                    <Text layoutX="85.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DETAILS COMMANDES" />
+                                    <ListView fx:id="listViewLigneComProd" layoutX="5.0" layoutY="59.0" prefHeight="374.0" prefWidth="838.0" />
+                                 </children>
+                              </Pane>
+                           </right>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Pane layoutY="13.0" prefHeight="74.0" prefWidth="1177.0">
+         <children>
+            <ImageView fitHeight="87.0" fitWidth="392.0" layoutX="392.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-x: 3;">
+               <image>
+                  <Image url="@../image/Banniere1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8a8888" height="31.0" layoutX="-1.0" layoutY="79.0" stroke="BLACK" strokeType="INSIDE" width="1177.0" />
+      <JFXButton layoutX="774.0" layoutY="85.0" text="RECHERCHER" />
+      <TextField layoutX="538.0" layoutY="79.0" prefHeight="31.0" prefWidth="236.0" />
+      <AnchorPane fx:id="anchor" layoutX="469.0" layoutY="646.0" prefHeight="281.0" prefWidth="622.0">
+         <children>
+            <ImageView fx:id="photo" fitHeight="119.0" fitWidth="171.0" layoutX="211.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="101.0" layoutY="107.0" text="PHOTO" />
+            <JFXButton fx:id="validerAchat" layoutX="286.0" layoutY="239.0" onAction="#validerAchat" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: GREEN;" text="VALIDER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="prixAchat" layoutX="329.0" layoutY="14.0" prefHeight="25.0" prefWidth="162.0" text="PRIX DE VENTE" />
+            <JFXTextField fx:id="prixVente" layoutX="101.0" layoutY="14.0" prefHeight="25.0" prefWidth="155.0" text="PRIX D'ACHAT" />
+            <JFXButton fx:id="charger" layoutX="410.0" layoutY="192.0" onAction="#charger" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: BLUE;" text="CHARGER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="txtphotos" layoutX="101.0" layoutY="192.0" prefHeight="31.0" prefWidth="302.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

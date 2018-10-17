@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Personne" table="personne" schema="public" optimistic-lock="version">
+        <id name="idpersonne" type="string">
+            <column name="idpersonne" length="254" />
+            <generator class="assigned" />
+        </id>
+        <property name="prenom" type="string">
+            <column name="prenom" length="254" />
+        </property>
+        <property name="nom" type="string">
+            <column name="nom" length="254" />
+        </property>
+        <property name="datenaiss" type="string">
+            <column name="datenaiss" length="254" />
+        </property>
+        <property name="lieunaiss" type="string">
+            <column name="lieunaiss" length="254" />
+        </property>
+        <property name="adresse" type="string">
+            <column name="adresse" length="254" />
+        </property>
+        <property name="telephone" type="string">
+            <column name="telephone" length="254" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="254" />
+        </property>
+        <property name="categorie" type="string">
+            <column name="categorie" length="254" />
+        </property>
+        <property name="nationalite" type="string">
+            <column name="nationalite" length="254" />
+        </property>
+        <property name="sexe" type="string">
+            <column name="sexe" length="254" />
+        </property>
+        <property name="login" type="string">
+            <column name="login" length="254" />
+        </property>
+        <property name="motpasse" type="string">
+            <column name="motpasse" length="254" />
+        </property>
+        <property name="photo" type="string">
+            <column name="photo" length="254" />
+        </property>
+        <property name="dateinscrip" type="string">
+            <column name="dateinscrip" length="254" />
+        </property>
+        <set name="privileges" table="privilegepers" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="idpersonne" length="254" not-null="true" />
+            </key>
+            <many-to-many entity-name="gestion.trelux.metier.Privilege">
+                <column name="idpriv" length="254" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="clients" table="client" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersonne" length="254" not-null="true" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Client" />
+        </set>
+        <set name="detailsmessages" table="detailsmessage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersonne" length="254" not-null="true" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Detailsmessage" />
+        </set>
+        <set name="employes" table="employe" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersonne" length="254" not-null="true" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Employe" />
+        </set>
+        <set name="administrateurs" table="administrateur" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersonne" length="254" not-null="true" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Administrateur" />
+        </set>
+        <set name="fournisseurs" table="fournisseur" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersonne" length="254" not-null="true" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Fournisseur" />
+        </set>
+    </class>
+</hibernate-mapping>

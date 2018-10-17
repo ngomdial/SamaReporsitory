@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Produit" table="produit" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="gestion.trelux.metier.ProduitId">
+            <key-property name="codeprod" type="string">
+                <column name="codeprod" length="254" />
+            </key-property>
+            <key-property name="format" type="string">
+                <column name="format" length="254" />
+            </key-property>
+            <key-property name="designation" type="string">
+                <column name="designation" length="254" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="familleboisson" class="gestion.trelux.metier.Familleboisson" fetch="select">
+            <column name="codefamille" length="254" />
+        </many-to-one>
+        <property name="datereception" type="string">
+            <column name="datereception" length="254" />
+        </property>
+        <property name="dateperemtion" type="string">
+            <column name="dateperemtion" length="254" />
+        </property>
+        <property name="prixunitaire" type="java.lang.Integer">
+            <column name="prixunitaire" />
+        </property>
+        <property name="photo" type="string">
+            <column name="photo" length="254" />
+        </property>
+        <property name="quantiteenstock" type="java.lang.Integer">
+            <column name="quantiteenstock" />
+        </property>
+        <property name="seuilminimum" type="java.lang.Integer">
+            <column name="seuilminimum" />
+        </property>
+        <property name="prixachat" type="java.lang.Integer">
+            <column name="prixachat" />
+        </property>
+        <property name="prixvente" type="java.lang.Integer">
+            <column name="prixvente" />
+        </property>
+        <set name="conditionnements" table="conditionnement" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codeprod" length="254" />
+                <column name="format" length="254" />
+                <column name="designation" length="254" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Conditionnement" />
+        </set>
+        <set name="lignecommandestocks" table="lignecommandestock" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codeprod" length="254" not-null="true" />
+                <column name="format" length="254" not-null="true" />
+                <column name="designation" length="254" not-null="true" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Lignecommandestock" />
+        </set>
+        <set name="lignecommandepaniers" table="lignecommandepanier" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codeprod" length="254" not-null="true" />
+                <column name="format" length="254" not-null="true" />
+                <column name="designation" length="254" not-null="true" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Lignecommandepanier" />
+        </set>
+    </class>
+</hibernate-mapping>

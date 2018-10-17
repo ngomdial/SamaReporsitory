@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Calendrierservice" table="calendrierservice" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="gestion.trelux.metier.CalendrierserviceId">
+            <key-property name="idpersonne" type="string">
+                <column name="idpersonne" length="254" />
+            </key-property>
+            <key-property name="type" type="string">
+                <column name="type" length="254" />
+            </key-property>
+            <key-property name="codejour" type="string">
+                <column name="codejour" length="254" />
+            </key-property>
+            <key-property name="heurefin" type="string">
+                <column name="heurefin" length="254" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="employe" class="gestion.trelux.metier.Employe" update="false" insert="false" fetch="select">
+            <column name="idpersonne" length="254" not-null="true" />
+            <column name="type" length="254" not-null="true" />
+        </many-to-one>
+        <many-to-one name="jour" class="gestion.trelux.metier.Jour" update="false" insert="false" fetch="select">
+            <column name="codejour" length="254" not-null="true" />
+        </many-to-one>
+        <property name="heuredebut" type="string">
+            <column name="heuredebut" length="254" />
+        </property>
+        <property name="datepriseservice" type="string">
+            <column name="datepriseservice" length="254" />
+        </property>
+    </class>
+</hibernate-mapping>

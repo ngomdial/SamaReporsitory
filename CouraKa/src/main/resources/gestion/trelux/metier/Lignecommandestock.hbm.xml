@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Lignecommandestock" table="lignecommandestock" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="gestion.trelux.metier.LignecommandestockId">
+            <key-property name="codeprod" type="string">
+                <column name="codeprod" length="254" />
+            </key-property>
+            <key-property name="format" type="string">
+                <column name="format" length="254" />
+            </key-property>
+            <key-property name="designation" type="string">
+                <column name="designation" length="254" />
+            </key-property>
+            <key-property name="codestock" type="string">
+                <column name="codestock" length="254" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="commandestock" class="gestion.trelux.metier.Commandestock" update="false" insert="false" fetch="select">
+            <column name="codestock" length="254" not-null="true" />
+        </many-to-one>
+        <many-to-one name="produit" class="gestion.trelux.metier.Produit" update="false" insert="false" fetch="select">
+            <column name="codeprod" length="254" not-null="true" />
+            <column name="format" length="254" not-null="true" />
+            <column name="designation" length="254" not-null="true" />
+        </many-to-one>
+        <property name="quantite" type="java.lang.Integer">
+            <column name="quantite" />
+        </property>
+    </class>
+</hibernate-mapping>

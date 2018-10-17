@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Fournisseur" table="fournisseur" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="gestion.trelux.metier.FournisseurId">
+            <key-property name="idpersonne" type="string">
+                <column name="idpersonne" length="254" />
+            </key-property>
+            <key-property name="codefour" type="string">
+                <column name="codefour" length="254" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="facturefournisseur" class="gestion.trelux.metier.Facturefournisseur" fetch="select">
+            <column name="codefacture" length="254" />
+        </many-to-one>
+        <many-to-one name="personne" class="gestion.trelux.metier.Personne" update="false" insert="false" fetch="select">
+            <column name="idpersonne" length="254" not-null="true" />
+        </many-to-one>
+        <property name="securefour" type="string">
+            <column name="securefour" length="254" />
+        </property>
+        <property name="compteur" type="java.lang.Integer">
+            <column name="compteur" />
+        </property>
+        <set name="lignedevises" table="lignedevis" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersonne" length="254" not-null="true" />
+                <column name="codefour" length="254" not-null="true" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Lignedevis" />
+        </set>
+        <set name="commandestocks" table="commandestock" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersonne" length="254" />
+                <column name="codefour" length="254" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Commandestock" />
+        </set>
+    </class>
+</hibernate-mapping>

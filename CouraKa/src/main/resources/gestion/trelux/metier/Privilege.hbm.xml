@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Privilege" table="privilege" schema="public" optimistic-lock="version">
+        <id name="idpriv" type="string">
+            <column name="idpriv" length="254" />
+            <generator class="assigned" />
+        </id>
+        <property name="intitule" type="string">
+            <column name="intitule" length="254" />
+        </property>
+        <property name="datedebut" type="string">
+            <column name="datedebut" length="254" />
+        </property>
+        <property name="datefin" type="string">
+            <column name="datefin" length="254" />
+        </property>
+        <property name="illimite" type="java.lang.Integer">
+            <column name="illimite" />
+        </property>
+        <set name="personnes" table="privilegepers" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpriv" length="254" not-null="true" />
+            </key>
+            <many-to-many entity-name="gestion.trelux.metier.Personne">
+                <column name="idpersonne" length="254" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

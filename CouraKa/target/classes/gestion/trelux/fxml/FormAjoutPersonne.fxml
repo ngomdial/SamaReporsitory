@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="615.0" prefWidth="839.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion.trelux.controller.FormeClientController">
+   <children>
+      <JFXTextField fx:id="cin" labelFloat="true" layoutX="41.0" layoutY="88.0" prefWidth="150.0" text="CIN">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="prenom" labelFloat="true" layoutX="49.0" layoutY="145.0" prefWidth="150.0" text="PRENOM" />
+      <JFXTextField fx:id="nom" labelFloat="true" layoutX="41.0" layoutY="214.0" prefWidth="150.0" text="NOM" />
+      <JFXTextField fx:id="datenais" labelFloat="true" layoutX="41.0" layoutY="295.0" prefWidth="150.0" text="DATE NAISSANCE" />
+      <JFXTextField fx:id="lieunais" labelFloat="true" layoutX="288.0" layoutY="164.0" prefWidth="150.0" text="LIEU NAISSANCE" />
+      <JFXTextField fx:id="nat" labelFloat="true" layoutX="288.0" layoutY="94.0" prefWidth="150.0" text="NATIONALITE" />
+      <JFXTextField fx:id="tel" labelFloat="true" layoutX="288.0" layoutY="220.0" prefWidth="150.0" text="TELEPHONE" />
+      <JFXTextField fx:id="adr" labelFloat="true" layoutX="41.0" layoutY="371.0" prefWidth="150.0" text="ADRESSE" />
+      <JFXTextField fx:id="email" labelFloat="true" layoutX="283.0" layoutY="301.0" prefHeight="0.0" prefWidth="150.0" text="EMAIL" />
+      <Label layoutX="265.0" layoutY="384.0" text="SEXE" />
+      <JFXRadioButton fx:id="femme" layoutX="340.0" layoutY="384.0" text="femme">
+         <toggleGroup>
+            <ToggleGroup fx:id="sexe" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="homme" layoutX="453.0" layoutY="384.0" text="homme" toggleGroup="$sexe" />
+      <Label layoutX="564.0" layoutY="94.0" text="PHOTO" />
+      <ImageView fx:id="image" fitHeight="164.0" fitWidth="214.0" layoutX="625.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="valider" layoutX="347.0" layoutY="494.0" onAction="#valider" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #1e90ff;" text="VALIDER" />
+      <JFXButton fx:id="charger" layoutX="749.0" layoutY="171.0" onAction="#charger" style="-fx-background-color: green;" text="CHARGER" />
+      <TextField fx:id="chemin" layoutX="510.0" layoutY="171.0" prefHeight="25.0" prefWidth="223.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" stroke="BLACK" strokeType="INSIDE" width="839.0" />
+      <JFXTextField fx:id="categorie" labelFloat="true" layoutX="472.0" layoutY="301.0" prefWidth="150.0" text="CATEGORIE" />
+   </children>
+</AnchorPane>

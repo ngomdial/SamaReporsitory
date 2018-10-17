@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Ecaissement" table="ecaissement" schema="public" optimistic-lock="version">
+        <id name="codeencaiss" type="string">
+            <column name="codeencaiss" length="254" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="caissier" class="gestion.trelux.metier.Caissier" fetch="select">
+            <column name="idpersonne" length="254" />
+            <column name="type" length="254" />
+            <column name="codecaissier" length="254" />
+        </many-to-one>
+        <property name="montantencaisse" type="java.lang.Integer">
+            <column name="montantencaisse" />
+        </property>
+        <property name="dateencaiss" type="string">
+            <column name="dateencaiss" length="254" />
+        </property>
+    </class>
+</hibernate-mapping>

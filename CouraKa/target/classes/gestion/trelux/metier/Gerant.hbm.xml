@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Gerant" table="gerant" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="gestion.trelux.metier.GerantId">
+            <key-property name="idpersonne" type="string">
+                <column name="idpersonne" length="254" />
+            </key-property>
+            <key-property name="type" type="string">
+                <column name="type" length="254" />
+            </key-property>
+            <key-property name="codegerant" type="string">
+                <column name="codegerant" length="254" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="boutique" class="gestion.trelux.metier.Boutique" fetch="select">
+            <column name="codeboutique" length="254" />
+        </many-to-one>
+        <many-to-one name="employe" class="gestion.trelux.metier.Employe" update="false" insert="false" fetch="select">
+            <column name="idpersonne" length="254" not-null="true" />
+            <column name="type" length="254" not-null="true" />
+        </many-to-one>
+        <property name="securegerant" type="string">
+            <column name="securegerant" length="254" />
+        </property>
+        <property name="droit" type="java.lang.Integer">
+            <column name="droit" />
+        </property>
+        <set name="detailsinventaires" table="detailsinventaire" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersonne" length="254" not-null="true" />
+                <column name="type" length="254" not-null="true" />
+                <column name="codegerant" length="254" not-null="true" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Detailsinventaire" />
+        </set>
+    </class>
+</hibernate-mapping>

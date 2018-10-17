@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion.trelux.controller.ComandGerantController">
+   <children>
+      <TabPane layoutX="-4.0" layoutY="111.0" prefHeight="515.0" prefWidth="1177.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Commande Nouveau Produit">
+               <content>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="1175.0">
+                     <children>
+                        <BorderPane fx:id="border" layoutX="6.0" layoutY="59.0" prefHeight="393.0" prefWidth="1163.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="59.0">
+                           <bottom>
+                              <JFXButton fx:id="validCom" onAction="#validCom" prefHeight="32.0" prefWidth="66.0" style="-fx-background-color: blue;" text="Valider" BorderPane.alignment="CENTER" />
+                           </bottom>
+                           <right>
+                              <Pane prefHeight="361.0" prefWidth="469.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <ListView fx:id="listview" layoutX="1.0" layoutY="-1.0" prefHeight="362.0" prefWidth="468.0" />
+                                 </children>
+                              </Pane>
+                           </right>
+                        </BorderPane>
+                        <AnchorPane fx:id="anchor" layoutX="50.0" layoutY="539.0" prefHeight="249.0" prefWidth="587.0">
+                           <children>
+                              <JFXButton fx:id="ajoutLigne" layoutX="462.0" layoutY="210.0" onAction="#ajoutLigne" style="-fx-background-color: red;" text="ajout ligne" />
+                              <JFXTextField fx:id="codProd" layoutX="386.0" layoutY="131.0" text="code produit" />
+                              <JFXComboBox fx:id="comboFamille" layoutX="14.0" layoutY="137.0" prefHeight="25.0" prefWidth="146.0" promptText="famille" />
+                              <JFXComboBox fx:id="comboCondition" layoutX="390.0" layoutY="65.0" prefHeight="25.0" prefWidth="135.0" promptText="conditionement" />
+                              <JFXTextField fx:id="qte" layoutX="216.0" layoutY="137.0" text="qte" />
+                              <JFXTextField fx:id="format" layoutX="216.0" layoutY="65.0" text="Format" />
+                              <JFXTextField fx:id="name" layoutX="14.0" layoutY="65.0" text="Nom Produit" />
+                           </children>
+                        </AnchorPane>
+                        <Pane layoutY="-4.0" prefHeight="87.0" prefWidth="1177.0">
+                           <children>
+                              <JFXButton fx:id="valider" layoutX="513.0" layoutY="25.0" onAction="#valider" style="-fx-background-color: green;" text="inserer une ligne" />
+                              <JFXComboBox fx:id="four" layoutX="375.0" layoutY="24.0" prefHeight="25.0" prefWidth="125.0" />
+                              <Label layoutX="276.0" layoutY="25.0" prefHeight="25.0" prefWidth="82.0" text="FOURNISSEUR" />
+                              <DatePicker fx:id="dateliv" layoutX="124.0" layoutY="24.0" prefHeight="25.0" prefWidth="125.0" />
+                              <Label layoutX="14.0" layoutY="25.0" prefHeight="25.0" prefWidth="101.0" text="DATE LIVRAISON" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="Liste Commandes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="870.0">
+                     <children>
+                        <Pane layoutX="6.0" layoutY="3.0" prefHeight="396.0" prefWidth="639.0">
+                           <children>
+                              <TableView fx:id="listCom" layoutX="1.0" prefHeight="200.0" prefWidth="634.0">
+                                <columns>
+                                  <TableColumn fx:id="numStock" prefWidth="121.0" text="N° COMMANDE" />
+                                  <TableColumn fx:id="dateEmis" prefWidth="128.0" text="DATE EMISSION" />
+                                    <TableColumn fx:id="dateLivre" prefWidth="122.0" text="DATE LIVRAISON" />
+                                    <TableColumn fx:id="etat" prefWidth="94.0" text="ETAT" />
+                                    <TableColumn fx:id="fournisseur" prefWidth="168.0" text="FOURNISSEUR" />
+                                </columns>
+                              </TableView>
+                              <JFXButton layoutX="162.0" layoutY="251.0" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #d1e42a;" text="MODIFIER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="289.0" layoutY="251.0" prefHeight="35.0" prefWidth="102.0" style="-fx-background-color: RED;" text="SUPPRIMER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="407.0" layoutY="251.0" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: BLUE;" text="ACTUALISER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Commande Produit Existant">
+               <content>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="1175.0">
+                     <children>
+                        <BorderPane fx:id="borderProd" layoutX="6.0" layoutY="53.0" prefHeight="390.0" prefWidth="1163.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="53.0">
+                           <bottom>
+                              <JFXButton fx:id="validComProd" onAction="#validComProd" prefHeight="32.0" prefWidth="66.0" style="-fx-background-color: blue;" text="Valider" BorderPane.alignment="CENTER" />
+                           </bottom>
+                           <right>
+                              <Pane prefHeight="361.0" prefWidth="469.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <ListView fx:id="listviewProd" layoutX="1.0" layoutY="-1.0" prefHeight="362.0" prefWidth="468.0" />
+                                 </children>
+                              </Pane>
+                           </right>
+                        </BorderPane>
+                        <AnchorPane fx:id="anchorProd" layoutX="50.0" layoutY="539.0" prefHeight="249.0" prefWidth="587.0">
+                           <children>
+                              <JFXComboBox fx:id="comboProd" layoutX="35.0" layoutY="113.0" prefHeight="25.0" prefWidth="113.0" promptText="Produit" />
+                              <JFXTextField fx:id="qteProd" layoutX="226.0" layoutY="112.0" text="qte" />
+                              <JFXComboBox fx:id="comboConditionProd" layoutX="420.0" layoutY="113.0" prefHeight="25.0" prefWidth="135.0" promptText="Conditionnement" />
+                              <JFXButton fx:id="ajoutLigneProd" layoutX="347.0" layoutY="210.0" onAction="#ajoutLigneProd" style="-fx-background-color: red;" text="ajout ligne" />
+                           </children>
+                        </AnchorPane>
+                        <Pane layoutY="-4.0" prefHeight="87.0" prefWidth="1177.0">
+                           <children>
+                              <JFXButton fx:id="validerProd" layoutX="513.0" layoutY="25.0" onAction="#validerProd" style="-fx-background-color: green;" text="inserer une ligne" />
+                              <JFXComboBox fx:id="fourProd" layoutX="375.0" layoutY="24.0" prefHeight="25.0" prefWidth="125.0" />
+                              <Label layoutX="276.0" layoutY="25.0" prefHeight="25.0" prefWidth="82.0" text="FOURNISSEUR" />
+                              <DatePicker fx:id="datelivProd" layoutX="124.0" layoutY="24.0" prefHeight="25.0" prefWidth="125.0" />
+                              <Label layoutX="14.0" layoutY="25.0" prefHeight="25.0" prefWidth="101.0" text="DATE LIVRAISON" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Pane layoutY="13.0" prefHeight="74.0" prefWidth="1177.0">
+         <children>
+            <ImageView fitHeight="87.0" fitWidth="392.0" layoutX="392.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-x: 3;">
+               <image>
+                  <Image url="@../image/Banniere1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8a8888" height="31.0" layoutX="-1.0" layoutY="79.0" stroke="BLACK" strokeType="INSIDE" width="1177.0" />
+      <JFXButton layoutX="774.0" layoutY="85.0" text="RECHERCHER" />
+      <TextField layoutX="538.0" layoutY="79.0" prefHeight="31.0" prefWidth="236.0" />
+   </children>
+</AnchorPane>

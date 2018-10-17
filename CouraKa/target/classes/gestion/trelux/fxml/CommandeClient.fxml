@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="87.0" prefWidth="1224.0">
+         <children>
+            <ImageView fitHeight="87.0" fitWidth="392.0" layoutX="392.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-x: 3;">
+               <image>
+                  <Image url="@../image/Banniere1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8a8888" height="31.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" width="1175.0" />
+      <TextField layoutX="528.0" layoutY="75.0" prefHeight="25.0" prefWidth="236.0" />
+      <JFXButton layoutX="764.0" layoutY="75.0" text="RECHERCHER" />
+      <TabPane layoutX="-2.0" layoutY="103.0" prefHeight="523.0" prefWidth="1177.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Nouvelle Commade">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="156.0" layoutY="124.0" prefHeight="111.0" prefWidth="925.0">
+                           <children>
+                              <JFXComboBox prefHeight="25.0" prefWidth="232.0" promptText="CONDITIONNEMENT" GridPane.columnIndex="1" />
+                              <JFXComboBox layoutX="10.0" layoutY="90.0" prefHeight="25.0" prefWidth="200.0" promptText="NOM PRODUIT" />
+                              <JFXTextField text="QUANTITE DETAILS" GridPane.columnIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </JFXTextField>
+                              <JFXTextField layoutX="453.0" layoutY="11.0" text="QUANTITE GROS" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </JFXTextField>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="306.0" minWidth="10.0" prefWidth="215.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="430.0" minWidth="10.0" prefWidth="226.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="430.0" minWidth="0.0" prefWidth="248.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="430.0" minWidth="10.0" prefWidth="227.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="27.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <JFXButton layoutX="353.0" layoutY="249.0" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: GREEN;" text="VALIDER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <DatePicker layoutX="199.0" layoutY="51.0" prefHeight="25.0" prefWidth="294.0" />
+                        <Label layoutX="81.0" layoutY="51.0" prefHeight="25.0" prefWidth="101.0" text="DATE LIVRAISON" />
+                        <JFXComboBox layoutX="552.0" layoutY="38.0" prefHeight="25.0" prefWidth="285.0" />
+                        <Label layoutX="500.0" layoutY="51.0" prefHeight="25.0" prefWidth="52.0" text="CLIENT" />
+                        <JFXButton layoutX="453.0" layoutY="249.0" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: BLUE;" text="NOUVELLE LIGNE" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Liste Commandes">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="870.0">
+                     <children>
+                        <Pane layoutX="6.0" layoutY="3.0" prefHeight="396.0" prefWidth="862.0">
+                           <children>
+                              <TableView layoutX="-6.0" prefHeight="200.0" prefWidth="870.0">
+                                 <columns>
+                                    <TableColumn prefWidth="101.0" text="N° COMMANDE" />
+                                    <TableColumn prefWidth="110.0" text="DATE EMISSION" />
+                                    <TableColumn text="FAMILLE" />
+                                    <TableColumn prefWidth="130.0" text="CONDITIONNEMENT" />
+                                    <TableColumn prefWidth="95.0" text="PRODUIT" />
+                                    <TableColumn prefWidth="110.0" text="DATE LIVRAISON" />
+                                    <TableColumn prefWidth="65.0" text="ETAT" />
+                                    <TableColumn text="QUANTITE" />
+                                    <TableColumn prefWidth="98.0" text="CLIENT" />
+                                 </columns>
+                              </TableView>
+                              <JFXButton layoutX="162.0" layoutY="251.0" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #d1e42a;" text="MODIFIER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="289.0" layoutY="251.0" prefHeight="35.0" prefWidth="102.0" style="-fx-background-color: RED;" text="SUPPRIMER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="407.0" layoutY="251.0" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: BLUE;" text="ACTUALISER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

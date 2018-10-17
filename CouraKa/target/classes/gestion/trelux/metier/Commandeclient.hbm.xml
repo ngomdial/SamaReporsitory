@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Commandeclient" table="commandeclient" schema="public" optimistic-lock="version">
+        <id name="codecom" type="string">
+            <column name="codecom" length="254" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="livraison" class="gestion.trelux.metier.Livraison" fetch="select">
+            <column name="codelivraison" length="254" />
+        </many-to-one>
+        <many-to-one name="panier" class="gestion.trelux.metier.Panier" fetch="select">
+            <column name="codepanier" length="254" />
+        </many-to-one>
+        <property name="datecom" type="string">
+            <column name="datecom" length="254" />
+        </property>
+        <property name="etatlivraison" type="string">
+            <column name="etatlivraison" length="254" />
+        </property>
+        <set name="factureclients" table="factureclient" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codecom" length="254" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Factureclient" />
+        </set>
+    </class>
+</hibernate-mapping>

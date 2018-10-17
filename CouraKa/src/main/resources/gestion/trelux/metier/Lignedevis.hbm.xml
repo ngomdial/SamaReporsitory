@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Lignedevis" table="lignedevis" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="gestion.trelux.metier.LignedevisId">
+            <key-property name="idpersonne" type="string">
+                <column name="idpersonne" length="254" />
+            </key-property>
+            <key-property name="codefour" type="string">
+                <column name="codefour" length="254" />
+            </key-property>
+            <key-property name="codedevis" type="string">
+                <column name="codedevis" length="254" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="devis" class="gestion.trelux.metier.Devis" update="false" insert="false" fetch="select">
+            <column name="codedevis" length="254" not-null="true" />
+        </many-to-one>
+        <many-to-one name="fournisseur" class="gestion.trelux.metier.Fournisseur" update="false" insert="false" fetch="select">
+            <column name="idpersonne" length="254" not-null="true" />
+            <column name="codefour" length="254" not-null="true" />
+        </many-to-one>
+        <property name="prix" type="java.lang.Integer">
+            <column name="prix" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Facturefournisseur" table="facturefournisseur" schema="public" optimistic-lock="version">
+        <id name="codefacture" type="string">
+            <column name="codefacture" length="254" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="commandestock" class="gestion.trelux.metier.Commandestock" fetch="select">
+            <column name="codestock" length="254" />
+        </many-to-one>
+        <property name="datefacture" type="string">
+            <column name="datefacture" length="254" />
+        </property>
+        <set name="fournisseurs" table="fournisseur" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codefacture" length="254" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Fournisseur" />
+        </set>
+    </class>
+</hibernate-mapping>

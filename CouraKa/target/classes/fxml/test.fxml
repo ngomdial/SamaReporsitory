@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="1033.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion.trelux.controller.TestControler">
+   <children>
+      <JFXButton fx:id="valider" layoutX="505.0" layoutY="156.0" onAction="#valider" style="-fx-background-color: green;" text="inserer une ligne" />
+      <JFXComboBox fx:id="four" layoutX="367.0" layoutY="155.0" prefHeight="25.0" prefWidth="125.0" />
+      <Label layoutX="268.0" layoutY="156.0" prefHeight="25.0" prefWidth="82.0" text="FOURNISSEUR" />
+      <DatePicker fx:id="dateliv" layoutX="116.0" layoutY="155.0" prefHeight="25.0" prefWidth="125.0" />
+      <BorderPane fx:id="border" layoutX="7.0" layoutY="181.0" prefHeight="293.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="181.0">
+         <bottom>
+            <JFXButton fx:id="validCom" onAction="#validCom" prefHeight="32.0" prefWidth="66.0" style="-fx-background-color: blue;" text="Valider" BorderPane.alignment="CENTER" />
+         </bottom>
+         <right>
+            <Pane prefHeight="302.0" prefWidth="368.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ListView fx:id="listview" layoutX="-1.0" layoutY="-1.0" prefHeight="303.0" prefWidth="367.0" />
+               </children>
+            </Pane>
+         </right>
+      </BorderPane>
+      <AnchorPane fx:id="anchor" layoutX="50.0" layoutY="539.0" prefHeight="249.0" prefWidth="587.0">
+         <children>
+            <JFXButton fx:id="ajoutLigne" layoutX="462.0" layoutY="210.0" onAction="#ajoutLigne" style="-fx-background-color: red;" text="ajout ligne" />
+            <JFXTextField fx:id="codProd" layoutX="386.0" layoutY="131.0" text="code produit" />
+            <JFXComboBox fx:id="comboFamille" layoutX="14.0" layoutY="137.0" prefHeight="25.0" prefWidth="146.0" promptText="famille" />
+            <JFXComboBox fx:id="comboCondition" layoutX="390.0" layoutY="65.0" prefHeight="25.0" prefWidth="135.0" promptText="conditionement" />
+            <JFXTextField fx:id="qte" layoutX="216.0" layoutY="137.0" text="qte" />
+            <JFXTextField fx:id="format" layoutX="216.0" layoutY="65.0" text="Format" />
+            <JFXTextField fx:id="name" layoutX="14.0" layoutY="65.0" text="Nom Produit" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="6.0" layoutY="156.0" prefHeight="25.0" prefWidth="101.0" text="DATE LIVRAISON" />
+      <Pane layoutY="9.0" prefHeight="74.0" prefWidth="1177.0" />
+   </children>
+</AnchorPane>

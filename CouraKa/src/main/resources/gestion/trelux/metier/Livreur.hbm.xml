@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Livreur" table="livreur" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="gestion.trelux.metier.LivreurId">
+            <key-property name="idpersonne" type="string">
+                <column name="idpersonne" length="254" />
+            </key-property>
+            <key-property name="type" type="string">
+                <column name="type" length="254" />
+            </key-property>
+            <key-property name="codelivreur" type="string">
+                <column name="codelivreur" length="254" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="employe" class="gestion.trelux.metier.Employe" update="false" insert="false" fetch="select">
+            <column name="idpersonne" length="254" not-null="true" />
+            <column name="type" length="254" not-null="true" />
+        </many-to-one>
+        <property name="disponibilte" type="string">
+            <column name="disponibilte" length="254" />
+        </property>
+        <set name="livraisons" table="livraison" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersonne" length="254" />
+                <column name="type" length="254" />
+                <column name="codelivreur" length="254" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Livraison" />
+        </set>
+    </class>
+</hibernate-mapping>

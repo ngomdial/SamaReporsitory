@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Jour" table="jour" schema="public" optimistic-lock="version">
+        <id name="codejour" type="string">
+            <column name="codejour" length="254" />
+            <generator class="assigned" />
+        </id>
+        <property name="libelle" type="string">
+            <column name="libelle" length="254" />
+        </property>
+        <set name="calendrierservices" table="calendrierservice" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codejour" length="254" not-null="true" />
+            </key>
+            <one-to-many class="gestion.trelux.metier.Calendrierservice" />
+        </set>
+    </class>
+</hibernate-mapping>

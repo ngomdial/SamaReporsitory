@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 mai 2018 11:55:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="gestion.trelux.metier.Detailsinventaire" table="detailsinventaire" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="gestion.trelux.metier.DetailsinventaireId">
+            <key-property name="idpersonne" type="string">
+                <column name="idpersonne" length="254" />
+            </key-property>
+            <key-property name="type" type="string">
+                <column name="type" length="254" />
+            </key-property>
+            <key-property name="codegerant" type="string">
+                <column name="codegerant" length="254" />
+            </key-property>
+            <key-property name="codeinventaire" type="string">
+                <column name="codeinventaire" length="254" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="gerant" class="gestion.trelux.metier.Gerant" update="false" insert="false" fetch="select">
+            <column name="idpersonne" length="254" not-null="true" />
+            <column name="type" length="254" not-null="true" />
+            <column name="codegerant" length="254" not-null="true" />
+        </many-to-one>
+        <many-to-one name="inventaire" class="gestion.trelux.metier.Inventaire" update="false" insert="false" fetch="select">
+            <column name="codeinventaire" length="254" not-null="true" />
+        </many-to-one>
+        <property name="produitperime" type="java.lang.Integer">
+            <column name="produitperime" />
+        </property>
+        <property name="produitarisque" type="java.lang.Integer">
+            <column name="produitarisque" />
+        </property>
+    </class>
+</hibernate-mapping>
